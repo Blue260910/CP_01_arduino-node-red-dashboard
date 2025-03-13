@@ -1,3 +1,18 @@
+# FIAP - ENGENHARIA DE SOFTWARE - 3ESPW
+## CP1 - Physical Computing IoT and IoB - 14/03/2025
+
+### Grupo
+
+André Lambert - RM 99148
+
+Felipe Cortez - RM99750
+
+Julia Lins - RM98690
+
+Luís Barreto - RM99210
+
+Victor Aranda - RM99667
+
 # CP_01_arduino-node-red-dashboard
 Um projeto que integra o Arduino com Node-RED para controlar e monitorar sensores via Dashboard.
 
