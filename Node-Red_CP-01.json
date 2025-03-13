@@ -1,0 +1,320 @@
+[
+    {
+        "id": "9160a2488030544c",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9f9bb3165d66affd",
+        "type": "inject",
+        "z": "9160a2488030544c",
+        "name": "Entrada Simulada",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"tempF\":70, \"humidity\":60, \"ldr\":232}",
+        "payloadType": "str",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "9430cb97cf3d30fc"
+            ]
+        ]
+    },
+    {
+        "id": "9430cb97cf3d30fc",
+        "type": "json",
+        "z": "9160a2488030544c",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "525902f41ab929d0",
+                "f199c39a7310eff7",
+                "f34fef4240a89b41",
+                "e6343a72d8e8a1c1"
+            ]
+        ]
+    },
+    {
+        "id": "525902f41ab929d0",
+        "type": "ui_gauge",
+        "z": "9160a2488030544c",
+        "name": "",
+        "group": "3279aafc3e88b28c",
+        "order": 0,
+        "width": "7",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Temperatura F",
+        "label": "C",
+        "format": "{{msg.payload.tempF}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#7de1e8",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 900,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f199c39a7310eff7",
+        "type": "debug",
+        "z": "9160a2488030544c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f34fef4240a89b41",
+        "type": "ui_gauge",
+        "z": "9160a2488030544c",
+        "name": "",
+        "group": "3279aafc3e88b28c",
+        "order": 0,
+        "width": "7",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Umidade",
+        "label": "C",
+        "format": "{{msg.payload.humidity}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#e8814a",
+            "#00e62e",
+            "#98cb3a"
+        ],
+        "seg1": "50",
+        "seg2": "80",
+        "diff": false,
+        "className": "",
+        "x": 880,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e6343a72d8e8a1c1",
+        "type": "ui_gauge",
+        "z": "9160a2488030544c",
+        "name": "",
+        "group": "3279aafc3e88b28c",
+        "order": 0,
+        "width": "7",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Luminosidade",
+        "label": "C",
+        "format": "{{msg.payload.ldr}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#7de1e8",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "300",
+        "seg2": "700",
+        "diff": false,
+        "className": "",
+        "x": 900,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fc68d1287cafa8c0",
+        "type": "ui_button",
+        "z": "9160a2488030544c",
+        "name": "",
+        "group": "3279aafc3e88b28c",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "Servo 0°",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "servo",
+        "topicType": "msg",
+        "x": 620,
+        "y": 480,
+        "wires": [
+            [
+                "e4a03246b4590ec9",
+                "03dafa4eacfecde7"
+            ]
+        ]
+    },
+    {
+        "id": "0c22b9e0621b9ae3",
+        "type": "ui_button",
+        "z": "9160a2488030544c",
+        "name": "",
+        "group": "3279aafc3e88b28c",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "Servo 90°",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "str",
+        "topic": "servo",
+        "topicType": "msg",
+        "x": 620,
+        "y": 520,
+        "wires": [
+            [
+                "e4a03246b4590ec9",
+                "03dafa4eacfecde7"
+            ]
+        ]
+    },
+    {
+        "id": "b9c75d241879cf24",
+        "type": "ui_button",
+        "z": "9160a2488030544c",
+        "name": "",
+        "group": "3279aafc3e88b28c",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "Servo 180°",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "servo",
+        "topicType": "msg",
+        "x": 630,
+        "y": 560,
+        "wires": [
+            [
+                "e4a03246b4590ec9",
+                "03dafa4eacfecde7"
+            ]
+        ]
+    },
+    {
+        "id": "e4a03246b4590ec9",
+        "type": "serial out",
+        "z": "9160a2488030544c",
+        "name": "Saida Servos",
+        "serial": "7675df929b0f30fc",
+        "x": 910,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "03dafa4eacfecde7",
+        "type": "debug",
+        "z": "9160a2488030544c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "24f1ad5eb420b2bc",
+        "type": "serial in",
+        "z": "9160a2488030544c",
+        "name": "Entrada Dados",
+        "serial": "7675df929b0f30fc",
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "9430cb97cf3d30fc"
+            ]
+        ]
+    },
+    {
+        "id": "3279aafc3e88b28c",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "af688afcefdf4abb",
+        "order": 1,
+        "disp": true,
+        "width": "21",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7675df929b0f30fc",
+        "type": "serial-port",
+        "name": "COM4",
+        "serialport": "COM4",
+        "serialbaud": "9600",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "af688afcefdf4abb",
+        "type": "ui_tab",
+        "name": "Sensores",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
