@@ -1,12 +1,13 @@
 #include <Servo.h>
 #include <DHT.h>
+#include <ArduinoJson.h>
 
 // Definir pinos dos sensores
 #define DHT_PIN 2         // Pino do sensor DHT11
 #define LDR_PIN A2        // Sensor LDR para luminosidade
 
 // Pino do Servo Motor
-#define SERVO_PIN 9
+#define SERVO_PIN 13
 
 // Definir tipo de sensor e inicializar
 #define DHT_TYPE DHT11
@@ -27,7 +28,7 @@ void setup() {
   Serial.begin(9600);
   myservo.attach(SERVO_PIN);
   myservo.write(angle2); // Posição inicial do servo (90°)
-
+  
   dht.begin(); // Inicializa o sensor DHT11
 }
 
@@ -48,16 +49,18 @@ void loop() {
 
     // Verifica se a leitura do DHT11 foi bem-sucedida
     if (isnan(tempC) || isnan(humidity)) {
-      Serial.println("Falha na leitura do DHT11");
+      Serial.println("{\"error\":\"Falha na leitura do DHT11\"}");
     } else {
-      // Envia os dados em formato JSON para o Node-RED
-      Serial.print("{\"tempF\":");
-      Serial.print(tempF);
-      Serial.print(", \"humidity\":");
-      Serial.print(humidity);
-      Serial.print(", \"ldr\":");
-      Serial.print(ldrReading);
-      Serial.println("}");
+      // Criar documento JSON
+      StaticJsonDocument<200> doc;
+      doc["tempF"] = tempF;
+      doc["humidity"] = humidity;
+      doc["ldr"] = ldrReading;
+
+      // Converter JSON para string e enviar via Serial
+      String jsonString;
+      serializeJson(doc, jsonString);
+      Serial.println(jsonString);
     }
   }
 
@@ -66,15 +69,15 @@ void loop() {
     char command = Serial.read();
     if (command == '1') {
       myservo.write(angle1);
-      Serial.println("Servo posicionado em 0 graus");
+      Serial.println("{\"servo\":\"0 graus\"}");
     }
     else if (command == '2') {
       myservo.write(angle2);
-      Serial.println("Servo posicionado em 90 graus");
+      Serial.println("{\"servo\":\"90 graus\"}");
     }
     else if (command == '3') {
       myservo.write(angle3);
-      Serial.println("Servo posicionado em 180 graus");
+      Serial.println("{\"servo\":\"180 graus\"}");
     }
   }
 }
