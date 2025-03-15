@@ -20,6 +20,7 @@ Um projeto que integra o Arduino com Node-RED para controlar e monitorar sensore
 
 Este é um projeto que integra um **Arduino** com **Node-RED**, controlando e monitorando sensores via uma interface gráfica de **Dashboard**. O projeto permite a leitura de sensores de temperatura, umidade, e luminosidade, com controle de um servo motor via Node-RED.
 
+
 ![image](https://github.com/user-attachments/assets/7ea4784c-fc16-4eed-8adc-0e81c3231e07)
 ![image](https://github.com/user-attachments/assets/6c7277fa-4981-425d-9ceb-89a66668ba7d)
 
@@ -31,6 +32,7 @@ Este é um projeto que integra um **Arduino** com **Node-RED**, controlando e mo
   - Sensor LDR (para luminosidade).
   - Potenciômetro (para controle manual do servo motor).
   - Servo Motor.
+  ![Componentes - Arduino](https://github.com/user-attachments/assets/b3e0a301-d34f-45e1-9a6d-60eed0078d59)
   ![image](https://github.com/user-attachments/assets/6f53099c-3e03-4062-b6be-080a92f2d0f1)
 
   
