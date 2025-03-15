@@ -71,6 +71,13 @@ Este é um projeto que integra um **Arduino** com **Node-RED**, controlando e mo
 - Veja os valores dos sensores em tempo real.
 - Use os botões para controlar o servo motor em diferentes ângulos.
 
+### 5. Dashboard do Node-RED
+- Adicionamos gráficos em nosso dashboard
+![imagem](https://github.com/user-attachments/assets/41717eca-80b1-4f95-aef4-d2f9f51cfd57)
+
+### 6. Fluxo | Json
+
+
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](LICENSE).
