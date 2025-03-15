@@ -72,11 +72,14 @@ Este é um projeto que integra um **Arduino** com **Node-RED**, controlando e mo
 - Use os botões para controlar o servo motor em diferentes ângulos.
 
 ### 5. Dashboard do Node-RED
-- Adicionamos gráficos em nosso dashboard
+- Adicionamos gráficos em nosso dashboard para facilitar visualização
+- Os botões giram o servo motor nos ângulos descritos
 ![imagem](https://github.com/user-attachments/assets/41717eca-80b1-4f95-aef4-d2f9f51cfd57)
+![imagem (1)](https://github.com/user-attachments/assets/39ca2edd-ca67-4d47-82e5-e86f756ef15f)
 
 ### 6. Fluxo | Json
-
+- Em nosso repositório, consta o nosso Fluxo do Json, abaixo imagem de exemplo:
+![Fluxo Json](https://github.com/user-attachments/assets/f4a99b10-9b19-4d74-be89-56c88533f8d3)
 
 ## Licença
 
