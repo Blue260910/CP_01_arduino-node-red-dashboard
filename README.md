@@ -81,6 +81,10 @@ Este é um projeto que integra um **Arduino** com **Node-RED**, controlando e mo
 - Em nosso repositório, consta o nosso Fluxo do Json, abaixo imagem de exemplo:
 ![Fluxo Json](https://github.com/user-attachments/assets/f4a99b10-9b19-4d74-be89-56c88533f8d3)
 
+### OBS:
+- Professor, como visto em sala, a parte do MQTT não funcionou devido problemas de MQTT
+- Com isso, fizemos funcionar utilizando Serial In e Serial Out por meio dos botões no dash e movimentando o Server Motor
+
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](LICENSE).
